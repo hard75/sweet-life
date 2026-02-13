@@ -1,0 +1,90 @@
+[gd_scene load_steps=6 format=3 uid="uid://psq2dkptxjrl"]
+
+[ext_resource type="FontFile" uid="uid://cv643mxnqxtot" path="res://sprites/interfaz/undertale-deltarune-text-font-extended.ttf" id="1_mqv0k"]
+[ext_resource type="Script" uid="uid://bsyq2l2368473" path="res://scripts/minijuegos/minijuegos conejo/mas_tiempo.gd" id="1_wmh2p"]
+
+[sub_resource type="Animation" id="Animation_mqv0k"]
+resource_name = "animacion"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tiempo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1),
+"transitions": PackedFloat32Array(0.48296815, 1, 1),
+"update": 0,
+"values": [Vector2(-21, -12), Vector2(-21, -15.725), Vector2(-21, -18.62)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("tiempo:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wmh2p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tiempo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-21, -12)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("tiempo:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2o6v8"]
+_data = {
+&"RESET": SubResource("Animation_wmh2p"),
+&"animacion": SubResource("Animation_mqv0k")
+}
+
+[node name="mas_tiempo" type="Node2D"]
+script = ExtResource("1_wmh2p")
+
+[node name="tiempo" type="Label" parent="."]
+offset_left = -21.0
+offset_top = -12.0
+offset_right = 23.0
+offset_bottom = 12.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("1_mqv0k")
+theme_override_font_sizes/font_size = 12
+text = "+1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_2o6v8")
+}
+autoplay = "animacion"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

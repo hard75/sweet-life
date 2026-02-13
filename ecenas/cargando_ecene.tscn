@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhgslf00752fq"]
+
+[ext_resource type="Script" uid="uid://bnvlwsfsqudbg" path="res://scripts/cargando_ecene.gd" id="1_6d8hn"]
+
+[node name="cargando ecene" type="Node2D"]
+script = ExtResource("1_6d8hn")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="lo qu sucede" type="ColorRect" parent="."]
+clip_children = 1
+offset_right = 128.0
+offset_bottom = 128.0
+
+[node name="Camera2D" type="Camera2D" parent="lo qu sucede"]
+position = Vector2(64, 64)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,57 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="sweet life"
+run/main_scene="uid://bve18qwegvtly"
+config/features=PackedStringArray("4.5", "Mobile")
+run/max_fps=60
+boot_splash/show_image=false
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+config/icon="uid://cl2l1mae5w8ha"
+
+[autoload]
+
+Trancision="*res://ecenas/trancision.tscn"
+Globals="*res://scripts/GLOBALS.gd"
+
+[display]
+
+window/size/viewport_width=128
+window/size/viewport_height=128
+window/size/window_width_override=900
+window/size/window_height_override=900
+window/stretch/mode="canvas_items"
+window/handheld/orientation=6
+
+[global_group]
+
+comida_posicion=""
+cuadro_dialogo=""
+level=""
+player_mapa=""
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[layer_names]
+
+2d_physics/layer_2="comida"
+2d_physics/layer_5="interaccion minijuegos"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

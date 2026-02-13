@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://c3h2ug506ot5l"]
+
+[ext_resource type="Script" uid="uid://bty0uaul28ssf" path="res://scripts/salas/pruebas/sala_1.gd" id="1_qnwxx"]
+[ext_resource type="Texture2D" uid="uid://yxo5dvaygu5n" path="res://sprites/backgrounds/background.png" id="1_smasc"]
+[ext_resource type="Texture2D" uid="uid://cbml40afy6f1i" path="res://sprites/backgrounds/background_0002.png" id="3_eqqar"]
+[ext_resource type="PackedScene" uid="uid://pxe5v3b0vxcn" path="res://ecenas/player_interfaz.tscn" id="3_qnwxx"]
+[ext_resource type="PackedScene" uid="uid://cvi7f7qebdae4" path="res://ecenas/ui.tscn" id="4_eqqar"]
+[ext_resource type="Texture2D" uid="uid://c247hkkm1vrv5" path="res://sprites/npc/player_malvado.png" id="4_hnve8"]
+[ext_resource type="PackedScene" uid="uid://dwvxqun1a7xd" path="res://ecenas/dialogo_interfaz.tscn" id="7_xhwpv"]
+[ext_resource type="Script" uid="uid://bkit6rmbij105" path="res://scripts/dormir_pantalla.gd" id="8_xhkbq"]
+
+[node name="sala 1" type="Node2D" groups=["level"]]
+script = ExtResource("1_qnwxx")
+sprite_texture_background = Array[CompressedTexture2D]([ExtResource("1_smasc"), ExtResource("3_eqqar"), ExtResource("3_eqqar"), ExtResource("3_eqqar")])
+tipo_de_sala = Array[int]([4, 1, 2, 3])
+max_value_texture = 3
+personaje_saldra = Array[int]([0, 0, 1, 0])
+sprite_otro_personaje_sprite = Array[CompressedTexture2D]([null, null, ExtResource("4_hnve8"), null])
+dialogo_npc_1 = Array[String](["este es un dialogo de prueba", "me gustaria saber que te parece", "...", "esta weno verdad??"])
+salidas_de_salas_rutas = Array[String](["res://ecenas/habitaciones/mapa.tscn", "res://ecenas/habitaciones/mapa.tscn", "res://ecenas/habitaciones/mapa.tscn", "res://ecenas/vestir.tscn"])
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(64, 64)
+
+[node name="ui" parent="." instance=ExtResource("4_eqqar")]
+layer = 10
+ecena_saldre = "res://ecenas/habitaciones/mapa.tscn"
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(64, 64)
+texture = ExtResource("1_smasc")
+
+[node name="player" parent="." instance=ExtResource("3_qnwxx")]
+
+[node name="npc" type="Sprite2D" parent="."]
+position = Vector2(0, 128)
+texture = ExtResource("4_hnve8")
+centered = false
+
+[node name="dialogo_interfaz" parent="." instance=ExtResource("7_xhwpv")]
+layer = 20
+
+[node name="dormir" type="CanvasLayer" parent="." groups=["dormir"]]
+layer = 30
+script = ExtResource("8_xhkbq")
+
+[node name="ColorRect" type="ColorRect" parent="dormir"]
+offset_right = 128.0
+offset_bottom = 128.0
+color = Color(0.619, 0.002, 0.806, 0)

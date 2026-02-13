@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://ovixi0nmm87l"]
+
+[ext_resource type="Texture2D" uid="uid://darcb32plsv0t" path="res://sprites/player/sombreros/sombreros_0001.png" id="1_8lt3x"]
+[ext_resource type="Script" uid="uid://bv2oxmsoegpnr" path="res://scripts/sombrero.gd" id="2_cqtuq"]
+[ext_resource type="Texture2D" uid="uid://buhnhvvvng1eo" path="res://sprites/interfaz/sombrero seleccionado.png" id="3_wxch7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqtuq"]
+size = Vector2(35, 35)
+
+[sub_resource type="Gradient" id="Gradient_wxch7"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3sikk"]
+gradient = SubResource("Gradient_wxch7")
+width = 32
+height = 32
+
+[node name="sombrero" type="TextureRect"]
+texture = ExtResource("1_8lt3x")
+script = ExtResource("2_cqtuq")
+
+[node name="SombreroSeleccionado" type="Sprite2D" parent="."]
+position = Vector2(64, 17)
+texture = ExtResource("3_wxch7")
+
+[node name="collision" type="Area2D" parent="."]
+position = Vector2(64, 19)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collision"]
+shape = SubResource("RectangleShape2D_cqtuq")
+
+[node name="seleccionar" type="TouchScreenButton" parent="."]
+position = Vector2(47, 3)
+scale = Vector2(1.0625, 1)
+texture_normal = SubResource("GradientTexture2D_3sikk")
+texture_pressed = SubResource("GradientTexture2D_3sikk")
+
+[connection signal="pressed" from="seleccionar" to="." method="_on_seleccionar_pressed"]

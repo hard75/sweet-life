@@ -1,0 +1,169 @@
+[gd_scene load_steps=34 format=3 uid="uid://fe3luavbxe8f"]
+
+[ext_resource type="Script" uid="uid://bjj6f8ym47cme" path="res://scripts/vestir.gd" id="1_rb423"]
+[ext_resource type="Shader" uid="uid://dwqdufv632vuj" path="res://shaders/background_movement.gdshader" id="1_utnp1"]
+[ext_resource type="Texture2D" uid="uid://b871r2dvdbwqq" path="res://sprites/backgrounds/backgrounds interfaz/vestir fondo_0001.png" id="2_bxsgj"]
+[ext_resource type="Texture2D" uid="uid://darcb32plsv0t" path="res://sprites/player/sombreros/sombreros_0001.png" id="2_ngpsq"]
+[ext_resource type="Texture2D" uid="uid://boocpegmiyi13" path="res://sprites/backgrounds/backgrounds interfaz/vestir fondo_0002.png" id="3_51vwt"]
+[ext_resource type="Texture2D" uid="uid://ctl4d1wiwmju8" path="res://sprites/player/sombreros/sombreros_0002.png" id="3_571mi"]
+[ext_resource type="Texture2D" uid="uid://b6h2hohjfy0xi" path="res://sprites/interfaz/interfaz_base.png" id="4_aunbw"]
+[ext_resource type="Texture2D" uid="uid://dc0v5e1ipbl3i" path="res://sprites/player/sombreros/sombreros_0003.png" id="4_axyqe"]
+[ext_resource type="Texture2D" uid="uid://cbp7mm1dyyxq3" path="res://sprites/interfaz/flecha-mapa.png" id="4_bxsgj"]
+[ext_resource type="PackedScene" uid="uid://pxe5v3b0vxcn" path="res://ecenas/player_interfaz.tscn" id="4_fw3ph"]
+[ext_resource type="Texture2D" uid="uid://c30xnckh42tj4" path="res://sprites/player/sombreros/sombreros_0004.png" id="5_o2uft"]
+[ext_resource type="Texture2D" uid="uid://dybjr0lwy8s50" path="res://sprites/player/sombreros/sombreros_0005.png" id="6_a3tcq"]
+[ext_resource type="Texture2D" uid="uid://c8mhopirm17kb" path="res://sprites/player/sombreros/sombreros_0006.png" id="7_m7sot"]
+[ext_resource type="Texture2D" uid="uid://bdi838lc2y7tm" path="res://sprites/player/sombreros/sombreros_0007.png" id="8_ixkyn"]
+[ext_resource type="Texture2D" uid="uid://c3yxk361r1saj" path="res://sprites/player/sombreros/sombreros_0008.png" id="9_b2fd8"]
+[ext_resource type="Texture2D" uid="uid://d08s820aejpi" path="res://sprites/player/sombreros/sombreros_0009.png" id="10_bxvbn"]
+[ext_resource type="Texture2D" uid="uid://cvv2bc7r2svmx" path="res://sprites/player/sombreros/sombreros_0010.png" id="11_fqq6p"]
+[ext_resource type="Texture2D" uid="uid://s7ermrahll65" path="res://sprites/player/sombreros/sombreros_0011.png" id="12_qj6p4"]
+[ext_resource type="Texture2D" uid="uid://cgmdd2o4q0psk" path="res://sprites/player/sombreros/sombreros_0012.png" id="13_7lleb"]
+[ext_resource type="Texture2D" uid="uid://dey75v5arlg3c" path="res://sprites/player/sombreros/sombreros_0013.png" id="14_mmi8y"]
+[ext_resource type="Texture2D" uid="uid://bwtkwmaogvyox" path="res://sprites/player/sombreros/sombreros_0014.png" id="15_ojnwe"]
+[ext_resource type="Texture2D" uid="uid://b5jxfult1pibq" path="res://sprites/player/sombreros/sombreros_0015.png" id="16_vucvw"]
+[ext_resource type="Texture2D" uid="uid://dm3bpe7ahkunl" path="res://sprites/interfaz/flecha irme_0001.png" id="22_571mi"]
+[ext_resource type="Script" uid="uid://dj3g3uvgkjb3v" path="res://scripts/sombreros_salir.gd" id="22_axyqe"]
+[ext_resource type="Texture2D" uid="uid://cl0ctn8g5kshx" path="res://sprites/interfaz/flecha irme_0002.png" id="23_axyqe"]
+
+[sub_resource type="Gradient" id="Gradient_aunbw"]
+colors = PackedColorArray(0.28669193, 0.50101376, 1, 1, 0.20249903, 0.33336163, 0.872658, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fw3ph"]
+gradient = SubResource("Gradient_aunbw")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rb423"]
+shader = ExtResource("1_utnp1")
+shader_parameter/size = 100.0
+shader_parameter/speed = 0.2000000095
+shader_parameter/direction_x = 1.0
+shader_parameter/direction_y = 1.0
+shader_parameter/background_texture = SubResource("GradientTexture1D_fw3ph")
+shader_parameter/tile_texture1 = ExtResource("2_bxsgj")
+shader_parameter/tile_texture2 = ExtResource("3_51vwt")
+shader_parameter/screen_size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_571mi"]
+size = Vector2(35, 35)
+
+[sub_resource type="Gradient" id="Gradient_fw3ph"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rb423"]
+gradient = SubResource("Gradient_fw3ph")
+width = 32
+height = 32
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wiejv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6wbf4"]
+size = Vector2(6.5, 7)
+
+[node name="vestir" type="Node2D" groups=["sombreros grid"]]
+script = ExtResource("1_rb423")
+salidas_de_sala = "res://ecenas/habitaciones/sala_1.tscn"
+sombreros_texturas = Array[CompressedTexture2D]([ExtResource("2_ngpsq"), ExtResource("3_571mi"), ExtResource("4_axyqe"), ExtResource("5_o2uft"), ExtResource("6_a3tcq"), ExtResource("7_m7sot"), ExtResource("8_ixkyn"), ExtResource("9_b2fd8"), ExtResource("10_bxvbn"), ExtResource("11_fqq6p"), ExtResource("12_qj6p4"), ExtResource("13_7lleb"), ExtResource("14_mmi8y"), ExtResource("15_ojnwe"), ExtResource("16_vucvw")])
+
+[node name="fodo" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_rb423")
+offset_right = 128.0
+offset_bottom = 128.0
+
+[node name="player" parent="." instance=ExtResource("4_fw3ph")]
+
+[node name="InterfazBase" type="Sprite2D" parent="."]
+position = Vector2(64, 109.513)
+texture = ExtResource("4_aunbw")
+
+[node name="sombreros" type="Node2D" parent="."]
+position = Vector2(0, 92)
+
+[node name="sombreros contenedor" type="HBoxContainer" parent="sombreros"]
+offset_right = 338.0
+offset_bottom = 128.0
+theme_override_constants/separation = -86
+
+[node name="salir_text" type="TextureRect" parent="sombreros/sombreros contenedor"]
+layout_mode = 2
+texture = ExtResource("2_ngpsq")
+flip_v = true
+script = ExtResource("22_axyqe")
+
+[node name="salir2" type="TouchScreenButton" parent="sombreros/sombreros contenedor/salir_text"]
+position = Vector2(72, 11)
+rotation = -3.1415925
+scale = Vector2(1, -1)
+texture_normal = ExtResource("22_571mi")
+texture_pressed = ExtResource("23_axyqe")
+
+[node name="collision" type="Area2D" parent="sombreros/sombreros contenedor/salir_text"]
+position = Vector2(64, 19)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sombreros/sombreros contenedor/salir_text/collision"]
+shape = SubResource("RectangleShape2D_571mi")
+
+[node name="sombra" type="TextureRect" parent="sombreros"]
+offset_top = 1.0
+offset_right = 47.0
+offset_bottom = 36.0
+texture = SubResource("GradientTexture2D_rb423")
+
+[node name="sombra2" type="TextureRect" parent="sombreros"]
+offset_left = 128.0
+offset_top = 36.0
+offset_right = 175.0
+offset_bottom = 70.972244
+rotation = -3.1415927
+texture = SubResource("GradientTexture2D_rb423")
+
+[node name="Flecha-mapa2" type="Sprite2D" parent="."]
+modulate = Color(0.412152, 0.412152, 0.412152, 1)
+position = Vector2(113.99999, 111)
+rotation = 1.57079
+texture = ExtResource("4_bxsgj")
+
+[node name="Flecha-mapa4" type="Sprite2D" parent="."]
+modulate = Color(0.412152, 0.412152, 0.412152, 1)
+position = Vector2(14, 111)
+rotation = -1.5708054
+texture = ExtResource("4_bxsgj")
+
+[node name="flecha3" type="TouchScreenButton" parent="."]
+position = Vector2(120, 98.00001)
+rotation = 1.5708
+texture_normal = ExtResource("4_bxsgj")
+texture_pressed = ExtResource("4_bxsgj")
+
+[node name="flecha4" type="TouchScreenButton" parent="."]
+position = Vector2(8, 124.00001)
+rotation = -1.5708
+texture_normal = ExtResource("4_bxsgj")
+texture_pressed = ExtResource("4_bxsgj")
+
+[node name="izquierda_coll" type="Area2D" parent="."]
+position = Vector2(22, 111)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="izquierda_coll"]
+shape = SubResource("RectangleShape2D_wiejv")
+
+[node name="derecha_coll" type="Area2D" parent="."]
+position = Vector2(106, 111)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="derecha_coll"]
+shape = SubResource("RectangleShape2D_wiejv")
+
+[node name="sombrero_seleccionado" type="Area2D" parent="."]
+position = Vector2(64, 111)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sombrero_seleccionado"]
+shape = SubResource("RectangleShape2D_6wbf4")
+
+[connection signal="pressed" from="sombreros/sombreros contenedor/salir_text/salir2" to="sombreros/sombreros contenedor/salir_text" method="_on_salir_2_pressed"]
+[connection signal="pressed" from="flecha3" to="." method="_on_flecha_3_pressed"]
+[connection signal="pressed" from="flecha4" to="." method="_on_flecha_4_pressed"]
+[connection signal="area_entered" from="izquierda_coll" to="." method="_on_izquierda_coll_area_entered"]
+[connection signal="area_exited" from="izquierda_coll" to="." method="_on_izquierda_coll_area_exited"]
+[connection signal="area_entered" from="derecha_coll" to="." method="_on_derecha_coll_area_entered"]
+[connection signal="area_exited" from="derecha_coll" to="." method="_on_derecha_coll_area_exited"]
+[connection signal="area_entered" from="sombrero_seleccionado" to="." method="_on_sombrero_seleccionado_area_entered"]
+[connection signal="area_exited" from="sombrero_seleccionado" to="." method="_on_sombrero_seleccionado_area_exited"]

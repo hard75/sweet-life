@@ -1,0 +1,183 @@
+[gd_scene load_steps=8 format=3 uid="uid://bve18qwegvtly"]
+
+[ext_resource type="Texture2D" uid="uid://xx4qxehag6j6" path="res://sprites/sprites 128z128/PM studio pixel art.png" id="1_03iq1"]
+[ext_resource type="Script" uid="uid://ct3twer42nd0r" path="res://scripts/salas/PM_studio_logo.gd" id="1_08ll6"]
+[ext_resource type="Texture2D" uid="uid://dwhxhpgrd12jg" path="res://sprites/interfaz/configuracion/player_saving.png" id="3_bd6hl"]
+[ext_resource type="FontFile" uid="uid://cv643mxnqxtot" path="res://sprites/interfaz/undertale-deltarune-text-font-extended.ttf" id="4_q7qwq"]
+
+[sub_resource type="Animation" id="Animation_08ll6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PmStudioPixelArt:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PmStudioPixelArt:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PmStudioPixelArt:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(64, 64)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayerSaving:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(64, 148)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("aviso:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 136)]
+}
+
+[sub_resource type="Animation" id="Animation_03iq1"]
+resource_name = "apar"
+length = 6.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PmStudioPixelArt:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1.56917, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PmStudioPixelArt:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.57, 2),
+"transitions": PackedFloat32Array(0.297302, 1, 0.4665164, 1),
+"update": 0,
+"values": [Vector2(0.735, 0.735), Vector2(1, 1), Vector2(1, 1), Vector2(0.445, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PmStudioPixelArt:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 1.56, 1.98),
+"transitions": PackedFloat32Array(2.46229, 2.54912, 2.0705302, 1),
+"update": 0,
+"values": [Vector2(64, 67), Vector2(64, 64), Vector2(64, 63.165), Vector2(64, -66.29)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayerSaving:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.13, 2.5),
+"transitions": PackedFloat32Array(1, 0.5547847, 1),
+"update": 0,
+"values": [Vector2(64, 148), Vector2(64, 148), Vector2(64, 48)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("aviso:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.2, 2.6000001),
+"transitions": PackedFloat32Array(1, 0.39229202, 1),
+"update": 0,
+"values": [Vector2(0, 136), Vector2(0, 136), Vector2(0, 64)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_35b77"]
+_data = {
+&"RESET": SubResource("Animation_08ll6"),
+&"apar": SubResource("Animation_03iq1")
+}
+
+[node name="ecena_logo" type="Node2D"]
+script = ExtResource("1_08ll6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 128.0
+offset_bottom = 128.0
+
+[node name="PmStudioPixelArt" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(64, 64)
+texture = ExtResource("1_03iq1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(64, 64)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_35b77")
+}
+autoplay = "apar"
+
+[node name="PlayerSaving" type="Sprite2D" parent="."]
+position = Vector2(64, 148)
+texture = ExtResource("3_bd6hl")
+
+[node name="aviso" type="RichTextLabel" parent="."]
+offset_top = 136.0
+offset_right = 128.0
+offset_bottom = 204.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_q7qwq")
+theme_override_font_sizes/normal_font_size = 5
+bbcode_enabled = true
+text = "cuando veas este logo el juego se esta guardando automaticamente."
+fit_content = true
+scroll_active = false
+scroll_following = true
+autowrap_mode = 2
+horizontal_alignment = 1
+visible_characters_behavior = 1
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

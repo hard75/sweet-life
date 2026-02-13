@@ -1,0 +1,148 @@
+[gd_scene load_steps=12 format=3 uid="uid://c2gtjk6icvprb"]
+
+[ext_resource type="Script" uid="uid://ddu2qyxsxnl6m" path="res://scripts/salas/mapa.gd" id="1_4tisv"]
+[ext_resource type="Texture2D" uid="uid://cbp7mm1dyyxq3" path="res://sprites/interfaz/flecha-mapa.png" id="1_ifa0s"]
+[ext_resource type="Texture2D" uid="uid://bdpjxx8wiwhcd" path="res://sprites/interfaz/estas aqui.png" id="3_nol8u"]
+[ext_resource type="Texture2D" uid="uid://ccn74q3t4x5l7" path="res://sprites/backgrounds/casa en el mapa.png" id="3_undbp"]
+[ext_resource type="Script" uid="uid://b7mo2fvnnbpq6" path="res://scripts/puntos_relevantes_mapa.gd" id="5_undbp"]
+[ext_resource type="AudioStream" uid="uid://dmqvms5radvcv" path="res://sonidos/plop 1.wav" id="6_tsjxd"]
+
+[sub_resource type="Gradient" id="Gradient_4tisv"]
+offsets = PackedFloat32Array(0, 0.87013)
+colors = PackedColorArray(0, 0, 0, 0.552941, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nol8u"]
+gradient = SubResource("Gradient_4tisv")
+fill_from = Vector2(1, 0)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_5bwjj"]
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tsjxd"]
+gradient = SubResource("Gradient_5bwjj")
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_a2mfe"]
+gradient = SubResource("Gradient_5bwjj")
+
+[node name="mapa" type="Node2D"]
+script = ExtResource("1_4tisv")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(64, 64)
+
+[node name="flechas mapa" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Flecha-mapa" type="Sprite2D" parent="flechas mapa"]
+modulate = Color(0.412152, 0.412152, 0.412152, 1)
+position = Vector2(64, 14)
+texture = ExtResource("1_ifa0s")
+
+[node name="Flecha-mapa2" type="Sprite2D" parent="flechas mapa"]
+modulate = Color(0.412152, 0.412152, 0.412152, 1)
+position = Vector2(114, 64)
+rotation = 1.57079
+texture = ExtResource("1_ifa0s")
+
+[node name="Flecha-mapa3" type="Sprite2D" parent="flechas mapa"]
+modulate = Color(0.412152, 0.412152, 0.412152, 1)
+position = Vector2(64, 114)
+rotation = 3.14159
+texture = ExtResource("1_ifa0s")
+
+[node name="Flecha-mapa4" type="Sprite2D" parent="flechas mapa"]
+modulate = Color(0.412152, 0.412152, 0.412152, 1)
+position = Vector2(14, 64)
+rotation = 4.71238
+texture = ExtResource("1_ifa0s")
+
+[node name="flecha" type="TouchScreenButton" parent="flechas mapa"]
+position = Vector2(51, 8)
+texture_normal = ExtResource("1_ifa0s")
+texture_pressed = ExtResource("1_ifa0s")
+
+[node name="flecha2" type="TouchScreenButton" parent="flechas mapa"]
+position = Vector2(77, 120)
+rotation = -3.14159
+texture_normal = ExtResource("1_ifa0s")
+texture_pressed = ExtResource("1_ifa0s")
+
+[node name="flecha3" type="TouchScreenButton" parent="flechas mapa"]
+position = Vector2(120, 51)
+rotation = 1.5708
+texture_normal = ExtResource("1_ifa0s")
+texture_pressed = ExtResource("1_ifa0s")
+
+[node name="flecha4" type="TouchScreenButton" parent="flechas mapa"]
+position = Vector2(8, 77)
+rotation = -1.5708
+texture_normal = ExtResource("1_ifa0s")
+texture_pressed = ExtResource("1_ifa0s")
+
+[node name="mapa" type="Node2D" parent="."]
+
+[node name="fondo" type="ColorRect" parent="mapa"]
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 256.0
+offset_bottom = 256.0
+color = Color(0.427451, 0.411765, 1, 1)
+
+[node name="CasaEnElMapa" type="Sprite2D" parent="mapa"]
+position = Vector2(66, 83)
+texture = ExtResource("3_undbp")
+
+[node name="EstasAqui" type="Sprite2D" parent="mapa"]
+position = Vector2(64, 53)
+texture = ExtResource("3_nol8u")
+
+[node name="TextureRect" type="TextureRect" parent="mapa"]
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 256.0
+offset_bottom = -64.0
+texture = SubResource("GradientTexture2D_nol8u")
+
+[node name="TextureRect2" type="TextureRect" parent="mapa"]
+offset_left = 256.0
+offset_top = 256.0
+offset_right = 640.0
+offset_bottom = 320.0
+rotation = 3.14159
+texture = SubResource("GradientTexture2D_nol8u")
+
+[node name="TextureRect3" type="TextureRect" parent="mapa"]
+offset_left = 256.0
+offset_top = -128.0
+offset_right = 640.0
+offset_bottom = -64.0
+rotation = 1.5708
+texture = SubResource("GradientTexture2D_nol8u")
+
+[node name="TextureRect4" type="TextureRect" parent="mapa"]
+offset_left = -128.0
+offset_top = 256.0
+offset_right = 256.0
+offset_bottom = 320.0
+rotation = 4.71239
+texture = SubResource("GradientTexture2D_nol8u")
+
+[node name="puntos relevantes" type="Node2D" parent="."]
+script = ExtResource("5_undbp")
+
+[node name="casa_normal" type="TouchScreenButton" parent="puntos relevantes"]
+position = Vector2(47, 60.000004)
+scale = Vector2(0.546875, 0.5624999)
+texture_normal = SubResource("GradientTexture2D_tsjxd")
+texture_pressed = SubResource("GradientTexture2D_a2mfe")
+
+[node name="flechas" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_tsjxd")
+volume_db = -3.0
+
+[connection signal="pressed" from="flechas mapa/flecha" to="." method="_on_flecha_pressed"]
+[connection signal="pressed" from="flechas mapa/flecha2" to="." method="_on_flecha_2_pressed"]
+[connection signal="pressed" from="flechas mapa/flecha3" to="." method="_on_flecha_3_pressed"]
+[connection signal="pressed" from="flechas mapa/flecha4" to="." method="_on_flecha_4_pressed"]
+[connection signal="pressed" from="puntos relevantes/casa_normal" to="puntos relevantes" method="_on_casa_normal_pressed"]

@@ -1,0 +1,539 @@
+[gd_scene load_steps=16 format=3 uid="uid://b23d45irnprex"]
+
+[ext_resource type="Texture2D" uid="uid://d303d242mr0k4" path="res://sprites/interfaz/bola blanca.png" id="1_j7stj"]
+[ext_resource type="Script" uid="uid://dnq1o3e4e42c" path="res://scripts/TRANCISION.gd" id="1_ldklm"]
+[ext_resource type="Texture2D" uid="uid://cuhgfueaaapsa" path="res://sprites/interfaz/sweet life logo blanco.png" id="2_ldklm"]
+
+[sub_resource type="Animation" id="Animation_priqo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("contenedor/ColorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -128)]
+}
+
+[sub_resource type="Animation" id="Animation_uw68n"]
+resource_name = "abriendo"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("contenedor/ColorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.31864, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 128)]
+}
+
+[sub_resource type="Animation" id="Animation_j4dcx"]
+resource_name = "cerrando"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("contenedor/ColorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.31864, 1),
+"update": 0,
+"values": [Vector2(0, -128), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j7stj"]
+_data = {
+&"RESET": SubResource("Animation_priqo"),
+&"abriendo": SubResource("Animation_uw68n"),
+&"cerrando": SubResource("Animation_j4dcx")
+}
+
+[sub_resource type="Animation" id="Animation_e7ehg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("contenedor/pelotas container/BolaBlanca:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(38, 103)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("contenedor/pelotas container/BolaBlanca:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("contenedor/pelotas container/BolaBlanca4:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(89, 93)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("contenedor/pelotas container/BolaBlanca2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(55, 113)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("contenedor/pelotas container/BolaBlanca3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(72, 113)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("contenedor/pelotas container/BolaBlanca2:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.662745)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("contenedor/pelotas container/BolaBlanca3:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.662745)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("contenedor/pelotas container/BolaBlanca4:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.662745)]
+}
+
+[sub_resource type="Animation" id="Animation_gsbhg"]
+resource_name = "moviendose"
+length = 1.2
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("contenedor/pelotas container/BolaBlanca:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 0.832467, 0.86),
+"transitions": PackedFloat32Array(0.482968, 1.86607, 1, 1, 1),
+"update": 0,
+"values": [Vector2(38, 113), Vector2(38, 93), Vector2(38, 113), Vector2(38, 112), Vector2(38, 113.087)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("contenedor/pelotas container/BolaBlanca:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(0.482968, 1.86607, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.662745), Color(1, 1, 1, 1), Color(1, 1, 1, 0.662745)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("contenedor/pelotas container/BolaBlanca4:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3, 0.7, 1.1, 1.13, 1.16),
+"transitions": PackedFloat32Array(0.482968, 1.86607, 1, 1, 1),
+"update": 0,
+"values": [Vector2(89, 113), Vector2(89, 93), Vector2(89, 113), Vector2(89, 112), Vector2(89, 113.081)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("contenedor/pelotas container/BolaBlanca2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.5, 0.9, 0.93, 0.96),
+"transitions": PackedFloat32Array(0.482968, 1.86607, 1, 1, 1),
+"update": 0,
+"values": [Vector2(55, 113), Vector2(55, 93), Vector2(55, 113), Vector2(55, 112), Vector2(55, 113.094)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("contenedor/pelotas container/BolaBlanca3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.2, 0.6, 1, 1.03, 1.06),
+"transitions": PackedFloat32Array(0.482968, 1.86607, 1, 1, 1),
+"update": 0,
+"values": [Vector2(72, 113), Vector2(72, 93), Vector2(72, 113), Vector2(72, 112), Vector2(72, 113.094)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("contenedor/pelotas container/BolaBlanca2:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.1, 0.5, 0.9),
+"transitions": PackedFloat32Array(0.482968, 1.86607, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.662745), Color(1, 1, 1, 1), Color(1, 1, 1, 0.662745)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("contenedor/pelotas container/BolaBlanca3:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.2, 0.6, 1),
+"transitions": PackedFloat32Array(0.482968, 1.86607, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.662745), Color(1, 1, 1, 1), Color(1, 1, 1, 0.662745)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("contenedor/pelotas container/BolaBlanca4:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.3, 0.7, 1.1),
+"transitions": PackedFloat32Array(0.482968, 1.86607, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.662745), Color(1, 1, 1, 1), Color(1, 1, 1, 0.662745)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uw68n"]
+_data = {
+&"RESET": SubResource("Animation_e7ehg"),
+&"moviendose": SubResource("Animation_gsbhg")
+}
+
+[sub_resource type="Animation" id="Animation_mk71p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("contenedor/casilla:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("contenedor/casilla:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(64, 55)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("contenedor/casilla/SweetLifeLogoBlanco2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("contenedor/pelotas container:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ldklm"]
+resource_name = "desp"
+length = 0.1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("contenedor/casilla:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(2.07053, 2.07053),
+"update": 0,
+"values": [Vector2(0.13, 0.13), Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("contenedor/casilla:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(0.450625, 0.450625),
+"update": 0,
+"values": [Vector2(64, 55), Vector2(64, 47)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("contenedor/pelotas container:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1.86607),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_e0luf"]
+resource_name = "sweet_life_logo_apar"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("contenedor/casilla:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.25),
+"transitions": PackedFloat32Array(2.07053, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(0.13, 0.13), Vector2(0.12, 0.12)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("contenedor/casilla:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.450625, 1),
+"update": 0,
+"values": [Vector2(64, 47), Vector2(64, 55)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("contenedor/casilla/SweetLifeLogoBlanco2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("contenedor/pelotas container:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1.86607, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fpimi"]
+resource_name = "sweet_life_logo_stay"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("contenedor/casilla:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.12, 0.12)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("contenedor/casilla:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(0.329877, 3.36359, 1),
+"update": 0,
+"values": [Vector2(64, 55), Vector2(64, 51), Vector2(64, 55)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("contenedor/casilla/SweetLifeLogoBlanco2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("contenedor/pelotas container:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qmior"]
+_data = {
+&"RESET": SubResource("Animation_mk71p"),
+&"desp": SubResource("Animation_ldklm"),
+&"sweet_life_logo_apar": SubResource("Animation_e0luf"),
+&"sweet_life_logo_stay": SubResource("Animation_fpimi")
+}
+
+[node name="trancision" type="CanvasLayer"]
+layer = 128
+follow_viewport_enabled = true
+script = ExtResource("1_ldklm")
+
+[node name="contenedor" type="ColorRect" parent="."]
+clip_children = 1
+offset_right = 128.0
+offset_bottom = 128.0
+
+[node name="ColorRect" type="ColorRect" parent="contenedor"]
+layout_mode = 0
+offset_top = -128.0
+offset_right = 128.0
+color = Color(0, 0, 0, 1)
+
+[node name="pelotas container" type="Node2D" parent="contenedor"]
+modulate = Color(1, 1, 1, 0)
+
+[node name="BolaBlanca" type="Sprite2D" parent="contenedor/pelotas container"]
+position = Vector2(38, 103)
+texture = ExtResource("1_j7stj")
+
+[node name="BolaBlanca2" type="Sprite2D" parent="contenedor/pelotas container"]
+modulate = Color(1, 1, 1, 0.662745)
+position = Vector2(55, 113)
+texture = ExtResource("1_j7stj")
+
+[node name="BolaBlanca3" type="Sprite2D" parent="contenedor/pelotas container"]
+modulate = Color(1, 1, 1, 0.662745)
+position = Vector2(72, 113)
+texture = ExtResource("1_j7stj")
+
+[node name="BolaBlanca4" type="Sprite2D" parent="contenedor/pelotas container"]
+modulate = Color(1, 1, 1, 0.662745)
+position = Vector2(89, 93)
+texture = ExtResource("1_j7stj")
+
+[node name="casilla" type="Sprite2D" parent="contenedor"]
+clip_children = 1
+position = Vector2(64, 55)
+scale = Vector2(1e-05, 1e-05)
+
+[node name="SweetLifeLogoBlanco2" type="Sprite2D" parent="contenedor/casilla"]
+texture = ExtResource("2_ldklm")
+
+[node name="fondo" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_j7stj")
+}
+
+[node name="pelotitas" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_uw68n")
+}
+speed_scale = 0.5
+
+[node name="iconos" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_qmior")
+}
+
+[connection signal="animation_finished" from="fondo" to="." method="_on_fondo_animation_finished"]
+[connection signal="animation_finished" from="iconos" to="." method="_on_iconos_animation_finished"]

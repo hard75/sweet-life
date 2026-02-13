@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1i4fn0erc5f8"]
+
+[ext_resource type="Script" uid="uid://duta7xl20kl2w" path="res://scripts/dialogo.gd" id="1_iy71s"]
+[ext_resource type="Texture2D" uid="uid://c6mg77svvwf6n" path="res://sprites/interfaz/dialogo_conector.png" id="1_wiku8"]
+[ext_resource type="Texture2D" uid="uid://dkg7hnrgcix1y" path="res://sprites/interfaz/dialogo.png" id="2_iy71s"]
+[ext_resource type="FontFile" uid="uid://cv643mxnqxtot" path="res://sprites/interfaz/undertale-deltarune-text-font-extended.ttf" id="3_2xtsh"]
+[ext_resource type="AudioStream" uid="uid://d0fansrhyjoas" path="res://sonidos/sonido escribir.wav" id="5_2xtsh"]
+
+[node name="dialogo" type="Control" groups=["cuadro_dialogo"]]
+visible = false
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.477
+offset_bottom = -0.0560036
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iy71s")
+velocidad = 0.15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 126.0
+offset_bottom = 128.0
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_wiku8")
+stretch_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="recuadro" type="NinePatchRect" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_iy71s")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 21
+patch_margin_bottom = 21
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_2xtsh")
+theme_override_font_sizes/normal_font_size = 5
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+scroll_following = true
+autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters_behavior = 1
+
+[node name="sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_2xtsh")
+volume_db = -4.0
+pitch_scale = 1.52

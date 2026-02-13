@@ -1,0 +1,166 @@
+[gd_scene load_steps=27 format=3 uid="uid://cvi7f7qebdae4"]
+
+[ext_resource type="Script" uid="uid://b5ukirl0k5or6" path="res://scripts/ui.gd" id="1_ri0an"]
+[ext_resource type="Texture2D" uid="uid://b6h2hohjfy0xi" path="res://sprites/interfaz/interfaz_base.png" id="1_vlbm6"]
+[ext_resource type="Texture2D" uid="uid://dacjhp6he5mor" path="res://sprites/interfaz/botones_cambiar_0001.png" id="2_yhb5y"]
+[ext_resource type="Texture2D" uid="uid://b8i7g3g6qbgh" path="res://sprites/interfaz/botones_cambiar_0002.png" id="3_85fe4"]
+[ext_resource type="Texture2D" uid="uid://bwlbqtcrbklwo" path="res://sprites/interfaz/comida_vacia.png" id="4_2vq6u"]
+[ext_resource type="Texture2D" uid="uid://dm3bpe7ahkunl" path="res://sprites/interfaz/flecha irme_0001.png" id="4_3epvi"]
+[ext_resource type="Texture2D" uid="uid://cr62el5hrgweo" path="res://sprites/interfaz/comida_llena.png" id="5_dbmyd"]
+[ext_resource type="Texture2D" uid="uid://cl0ctn8g5kshx" path="res://sprites/interfaz/flecha irme_0002.png" id="5_ri0an"]
+[ext_resource type="Texture2D" uid="uid://dll1k0hhv2se" path="res://sprites/interfaz/sed_vacia.png" id="6_v3a34"]
+[ext_resource type="Texture2D" uid="uid://cq24h324vh44m" path="res://sprites/interfaz/comidas botones_0001.png" id="6_ydeox"]
+[ext_resource type="Texture2D" uid="uid://lpdo584nteo4" path="res://sprites/interfaz/sed_llena.png" id="7_mf3tv"]
+[ext_resource type="Texture2D" uid="uid://dtxsudooxyri0" path="res://sprites/interfaz/comidas botones_0002.png" id="7_qpk70"]
+[ext_resource type="Texture2D" uid="uid://ck4t24jiroj8t" path="res://sprites/interfaz/energia_vacia.png" id="8_y8r0c"]
+[ext_resource type="Texture2D" uid="uid://dkd5eprynp53y" path="res://sprites/interfaz/energia_llena.png" id="9_i78mk"]
+[ext_resource type="AudioStream" uid="uid://dmqvms5radvcv" path="res://sonidos/plop 1.wav" id="10_3epvi"]
+[ext_resource type="Texture2D" uid="uid://cpkilr6045st0" path="res://sprites/interfaz/salud_vacia.png" id="10_8ytge"]
+[ext_resource type="Texture2D" uid="uid://kvj85qyp3vnu" path="res://sprites/interfaz/salud_llena.png" id="11_rhkbe"]
+[ext_resource type="PackedScene" uid="uid://dl7jtlh4lfh8s" path="res://ecenas/comidas/bebidas.tscn" id="12_hxl6a"]
+[ext_resource type="AudioStream" uid="uid://da6bj2wj3g42p" path="res://sonidos/leaf_dodge.wav" id="12_ydeox"]
+[ext_resource type="PackedScene" uid="uid://c6k1op23qeslc" path="res://ecenas/comidas/comidas.tscn" id="13_qpk70"]
+[ext_resource type="Texture2D" uid="uid://cjfamwy1geaxs" path="res://sprites/interfaz/interacciones_botones_ui_0005.png" id="16_y8r0c"]
+[ext_resource type="Texture2D" uid="uid://cltlsf0h11gx2" path="res://sprites/interfaz/interacciones_botones_ui_0006.png" id="17_i78mk"]
+[ext_resource type="Texture2D" uid="uid://ye46w1b44axk" path="res://sprites/interfaz/interacciones_botones_ui_0001.png" id="18_8ytge"]
+[ext_resource type="Texture2D" uid="uid://cro8h2ylu7fkw" path="res://sprites/interfaz/interacciones_botones_ui_0002.png" id="19_rhkbe"]
+[ext_resource type="Texture2D" uid="uid://deirit4ebxk3h" path="res://sprites/interfaz/interacciones_botones_ui_0003.png" id="20_hk8ht"]
+[ext_resource type="Texture2D" uid="uid://dcbkwyejuf6sy" path="res://sprites/interfaz/interacciones_botones_ui_0004.png" id="21_c5dkt"]
+
+[node name="ui" type="CanvasLayer" groups=["interfaz"]]
+layer = 123
+script = ExtResource("1_ri0an")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="hambre" type="Node2D" parent="Control"]
+
+[node name="comida" type="TextureProgressBar" parent="Control/hambre"]
+offset_left = 1.0
+offset_top = 36.0
+offset_right = 18.0
+offset_bottom = 52.0
+value = 100.0
+fill_mode = 3
+texture_under = ExtResource("4_2vq6u")
+texture_progress = ExtResource("5_dbmyd")
+
+[node name="sed" type="TextureProgressBar" parent="Control/hambre"]
+offset_left = 1.0
+offset_top = 67.0
+offset_right = 18.0
+offset_bottom = 83.0
+value = 100.0
+fill_mode = 3
+texture_under = ExtResource("6_v3a34")
+texture_progress = ExtResource("7_mf3tv")
+
+[node name="energia" type="TextureProgressBar" parent="Control/hambre"]
+offset_left = 110.0
+offset_top = 36.0
+offset_right = 127.0
+offset_bottom = 52.0
+value = 100.0
+fill_mode = 3
+texture_under = ExtResource("8_y8r0c")
+texture_progress = ExtResource("9_i78mk")
+
+[node name="salud" type="TextureProgressBar" parent="Control/hambre"]
+offset_left = 110.0
+offset_top = 67.0
+offset_right = 127.0
+offset_bottom = 83.0
+value = 100.0
+fill_mode = 3
+texture_under = ExtResource("10_8ytge")
+texture_progress = ExtResource("11_rhkbe")
+
+[node name="InterfazBase" type="Sprite2D" parent="Control"]
+position = Vector2(64, 109.513)
+texture = ExtResource("1_vlbm6")
+
+[node name="izquierda" type="TouchScreenButton" parent="Control"]
+texture_normal = ExtResource("2_yhb5y")
+texture_pressed = ExtResource("3_85fe4")
+
+[node name="derecha" type="TouchScreenButton" parent="Control"]
+position = Vector2(128, 0)
+scale = Vector2(-1, 1)
+texture_normal = ExtResource("2_yhb5y")
+texture_pressed = ExtResource("3_85fe4")
+
+[node name="salir" type="TouchScreenButton" parent="Control"]
+position = Vector2(72, 103)
+scale = Vector2(-1, 1)
+texture_normal = ExtResource("4_3epvi")
+texture_pressed = ExtResource("5_ri0an")
+
+[node name="hablar" type="TouchScreenButton" parent="Control"]
+position = Vector2(72, 135)
+scale = Vector2(-1, 1)
+texture_normal = ExtResource("16_y8r0c")
+texture_pressed = ExtResource("17_i78mk")
+
+[node name="dormir" type="TouchScreenButton" parent="Control"]
+position = Vector2(72, 135)
+scale = Vector2(-1, 1)
+texture_normal = ExtResource("18_8ytge")
+texture_pressed = ExtResource("19_rhkbe")
+
+[node name="vestirse" type="TouchScreenButton" parent="Control"]
+position = Vector2(72, 135)
+scale = Vector2(-1, 1)
+texture_normal = ExtResource("20_hk8ht")
+texture_pressed = ExtResource("21_c5dkt")
+
+[node name="comida" type="TouchScreenButton" parent="Control"]
+position = Vector2(33, 95)
+scale = Vector2(-1, 1)
+texture_normal = ExtResource("6_ydeox")
+texture_pressed = ExtResource("7_qpk70")
+
+[node name="bebida" type="TouchScreenButton" parent="Control"]
+position = Vector2(126, 95)
+scale = Vector2(-1, 1)
+texture_normal = ExtResource("6_ydeox")
+texture_pressed = ExtResource("7_qpk70")
+
+[node name="comida_pos" type="Marker2D" parent="Control" groups=["comida_posicion"]]
+position = Vector2(18, 110)
+
+[node name="Comidas" parent="Control" instance=ExtResource("13_qpk70")]
+position = Vector2(17, 110)
+
+[node name="bebidas" parent="Control" instance=ExtResource("12_hxl6a")]
+position = Vector2(110, 110)
+
+[node name="flechas" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_3epvi")
+volume_db = -3.0
+
+[node name="agarrar" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_ydeox")
+
+[connection signal="pressed" from="Control/izquierda" to="." method="_on_izquierda_pressed"]
+[connection signal="pressed" from="Control/derecha" to="." method="_on_derecha_pressed"]
+[connection signal="pressed" from="Control/salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="Control/hablar" to="." method="_on_hablar_pressed"]
+[connection signal="pressed" from="Control/dormir" to="." method="_on_dormir_pressed"]
+[connection signal="pressed" from="Control/vestirse" to="." method="_on_vestirse_pressed"]
+[connection signal="pressed" from="Control/comida" to="." method="_on_comida_pressed"]
+[connection signal="pressed" from="Control/bebida" to="." method="_on_bebida_pressed"]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://biap35aafgy72"]
+
+[ext_resource type="PackedScene" uid="uid://cvi7f7qebdae4" path="res://ecenas/ui.tscn" id="2_2snfo"]
+[ext_resource type="PackedScene" uid="uid://c3h2ug506ot5l" path="res://ecenas/habitaciones/sala_1.tscn" id="3_egi56"]
+
+[node name="ecena" type="Node2D"]
+
+[node name="ui" parent="." instance=ExtResource("2_2snfo")]
+
+[node name="sala 1" parent="." instance=ExtResource("3_egi56")]

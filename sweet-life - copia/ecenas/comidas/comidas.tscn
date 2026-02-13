@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6k1op23qeslc"]
+
+[ext_resource type="Script" uid="uid://bjyq102b3k0hf" path="res://scripts/comidas/comida.gd" id="1_g8c4s"]
+[ext_resource type="Texture2D" uid="uid://dmo3tgk6f6wje" path="res://sprites/interfaz/comidas/comidas_0001.png" id="2_2qo6f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fek5w"]
+radius = 12.0
+
+[node name="Comidas" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_g8c4s")
+
+[node name="Comidas0001" type="Sprite2D" parent="."]
+texture = ExtResource("2_2qo6f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fek5w")
